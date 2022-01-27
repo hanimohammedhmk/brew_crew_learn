@@ -14,12 +14,18 @@ class Home extends StatelessWidget {
         title: const Text('Brew Crew'),
         elevation: 0.0,
         actions: <Widget>[
-          FlatButton.icon(
+          TextButton.icon(
             onPressed: () async {
               await _auth.signOut();
             },
-            icon: const Icon(Icons.person),
-            label: const Text('logout'),
+            icon: const Icon(
+              Icons.person,
+              color: Colors.yellow,
+            ),
+            label: const Text(
+              'logout',
+              style: TextStyle(color: Colors.yellow),
+            ),
           )
         ],
       ),
