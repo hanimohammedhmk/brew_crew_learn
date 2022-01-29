@@ -18,7 +18,7 @@ class _RegisterState extends State<Register> {
   //text field state
   String email = "";
   String passwd = "";
-  String error = "Registration currently not available";
+  String error = "";
   @override
   Widget build(BuildContext context) {
     return loading
@@ -83,15 +83,15 @@ class _RegisterState extends State<Register> {
                       ),
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
-                          // setState(() => loading = true);
-                          // dynamic result =
-                          //     await _auth.registerWithEmailAndPassword(email, passwd);
-                          // if (result == null) {
-                          //   setState(() {
-                          //     error = 'please supply a valid email';
-                          //     loading = false;
-                          //   });
-                          // }
+                          setState(() => loading = true);
+                          dynamic result = await _auth
+                              .registerWithEmailAndPassword(email, passwd);
+                          if (result == null) {
+                            setState(() {
+                              error = 'please supply a valid email';
+                              loading = false;
+                            });
+                          }
                           print(email);
                           print(passwd);
                         }

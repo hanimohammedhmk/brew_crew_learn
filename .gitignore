@@ -44,3 +44,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+lib/screens/home/brew_tile.dart
+.gitignore
+lib/models/brew.dart
+lib/screens/home/brew_list.dart
+lib/services/database.dart
